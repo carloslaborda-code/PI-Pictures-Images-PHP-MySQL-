@@ -1,0 +1,148 @@
+:root {
+    --color-alto-contraste-fondo: #ffffff;  /* Fondo blanco */
+    --color-alto-contraste-texto: #2c2c2c;  /* Texto oscuro */
+    --color-alto-contraste-primario: #043566;  /* Azul oscuro para encabezado y footer */
+    --color-alto-contraste-secundario: #ffcc00;  /* Amarillo para botones y enlaces */
+    --color-alto-contraste-hover: #28a745;  /* Verde para hover en botones */
+    --color-alto-contraste-borde: #ccc;  /* Borde claro para separar elementos */
+    --color-alto-contraste-footer-texto: #000000;  /* Texto negro en pie de página */
+    --color-alto-contraste-caja: #d3d3d3;  /* Gris más oscuro para las cajas */
+    --color-alto-contraste-section-fondo: #f5f5dc; /* Fondo beige para las secciones */
+}
+
+
+/* Estilo general para el cuerpo de la página */
+body {
+    background-color: var(--color-alto-contraste-fondo); /* Fondo blanco */
+    color: var(--color-alto-contraste-texto);
+}
+
+/* Estilo del encabezado */
+header {
+    background-color: var(--color-alto-contraste-primario);
+    color: var(--color-blanco);
+    text-shadow: none;
+    font-weight: bold; /* Negrita para el texto del header */
+}
+
+/* Texto dentro de la sección principal */
+section p {
+    color: var(--color-negro);  /* Asegurar que los párrafos sean negros */
+    font-weight: bold;  /* Poner negrita en el texto */
+}
+
+/* Asegurar que otros textos importantes sigan el estilo */
+h1, h2, h3, h4, h5, h6 {
+    color: var(--color-negro); /* Mantener el color negro en los encabezados */
+    font-weight: bold;
+}
+
+/* Ajustes para títulos específicos */
+h1 {
+    font-size: 2.5rem; /* Tamaño grande para el título principal */
+}
+
+/* Estilo para el menú de navegación */
+nav ul a {
+    background-color: var(--color-alto-contraste-secundario);
+    border: 2px solid var(--color-alto-contraste-hover);
+    color: var(--color-negro);
+    transition: background-color 0.3s ease;
+    border-radius: var(--radio-borde);
+}
+
+nav ul a:hover {
+    background-color: var(--color-alto-contraste-hover);
+}
+
+/* Estilo para los botones */
+button {
+    background-color: var(--color-alto-contraste-secundario);
+    border: 2px solid var(--color-alto-contraste-hover);
+    color: var(--color-negro);
+    border-radius: var(--radio-borde);
+    font-weight: bold;
+    margin-top: 15px;
+}
+
+button:hover {
+    background-color: var(--color-alto-contraste-hover);
+}
+
+/* Estilo para la disposición de las fotos */
+li {
+    background-color: var(--color-alto-contraste-caja); /* Fondo gris más oscuro para las cajas */
+    border: 2px solid var(--color-alto-contraste-borde);
+    border-radius: var(--radio-borde);
+}
+
+/* Estilo para la sección principal */
+section {
+    background-color: var(--color-alto-contraste-section-fondo);  /* Fondo beige para las secciones */
+    border: 1px solid var(--color-alto-contraste-borde);
+    border-radius: var(--radio-borde);
+}
+
+/* Estilo para las tablas */
+table {
+    border: 1px solid var(--color-alto-contraste-borde);
+}
+
+/* Estilo del pie de página */
+footer {
+    background-color: var(--color-alto-contraste-primario);  /* Fondo igual que el header */
+    color: var(--color-alto-contraste-footer-texto);  /* Texto negro */
+    font-size: 1.5rem;
+    padding: 20px;
+    text-align: center;
+    font-weight: bold; /* Texto en negrita */
+    width: 100%;
+}
+
+footer p {
+    margin: 10px 0;
+    font-weight: bold;
+    color: var(--color-alto-contraste-footer-texto);  /* Texto negro */
+}
+
+
+/* Estilo para pantallas pequeñas (móviles) */
+@media (max-width: 480px) {
+    body {
+        font-size: inherit;
+    }
+    
+    header, footer {
+        padding: inherit;
+    }
+
+    .formulario-busqueda {
+        width: 90%;
+    }
+
+    li {
+        width: 100%;
+    }
+}
+
+/* Estilo para pantallas medianas (tablets y pequeños portátiles) */
+@media (min-width: 481px) and (max-width: 1024px) {
+    .formulario-busqueda {
+        width: 75%; 
+    }
+
+    li {
+        width: calc(50% - 20px);
+    }
+}
+
+/* Estilo para pantallas grandes (monitores de escritorio) */
+@media (min-width: 1025px) and (max-width: 1920px) {
+    .formulario-busqueda {
+        width: 60%; 
+    }
+
+    li {
+        width: calc(33% - 20px); 
+    }
+}

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Acceso Restringido</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="alternate stylesheet" href="modo_noche.css" title="Modo Noche">
+   
+     <!-- Hoja de estilo para discapacidad visual -->
+ <link rel="alternate stylesheet"  href="Alto_contraste.css" title="Alto_contraste">
+ 
+ <!-- Hoja de estilo para discapacidad auditiva -->
+ <link rel="alternate stylesheet"  href="letra_grande.css" title="letra_grande">
+   
+   <!-- Hoja de estilo para discapacidad física -->
+   <link rel="alternate stylesheet"  href="Contraste_Grande.css" title="Alto Contraste y letra grande">
+   
+</head>
+
+<body>
+    <div>
+        <label for="styleSwitcher">Selecciona un estilo:</label>
+        <select id="styleSwitcher" onchange="cambiarEstilo()">
+            <option value="style.css">Estilo Predeterminado</option>
+            <option value="modo_noche.css">Modo Noche</option>
+            <option value="Alto_contraste.css">Alto Contraste</option>
+            <option value="letra_grande.css">Letra Grande</option>
+            <option value="Contraste_Grande.css">Contraste y Letra Grande</option>
+        </select>
+    </div>
+    
+
+    <h1>Acceso Restringido</h1>
+    <p>No tienes acceso a esta página porque no estás autenticado.</p>
+    <p>Por favor, <a href="index.html">inicia sesión</a> o <a href="registro.html">regístrate</a>.</p>
+    <script src="cambiarestilo.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,91 @@
+/* Modo Noche */
+body {
+    background-color: #121212; /* Fondo oscuro */
+    color: #f0f0f0; /* Texto claro */
+}
+
+header, footer {
+    background-color: #1f1f1f; /* Color más oscuro para encabezado y pie */
+    color: #ffffff;
+}
+
+button {
+    background-color: #3e3e3e; /* Botón oscuro */
+    color: #ffffff;
+}
+
+/* Formularios */
+.formulario-busqueda {
+    background-color: #1f1f1f; /* Fondo oscuro para el formulario */
+    border: 1px solid #3e3e3e; /* Borde oscuro */
+    color: #f0f0f0; /* Texto claro */
+}
+
+/* Tablas */
+table {
+    background-color: #1f1f1f; /* Fondo oscuro para tablas */
+    border: 1px solid #3e3e3e; /* Bordes oscuros */
+    color: #f0f0f0; /* Texto claro */
+}
+
+th, td {
+    border: 1px solid #3e3e3e; /* Bordes oscuros */
+    padding: 8px;
+    color: #f0f0f0; /* Texto claro */
+}
+
+/* Contenedor con bordes */
+.conBorde {
+    border: 2px solid #3e3e3e; /* Borde oscuro */
+    background-color: #1f1f1f; /* Fondo oscuro */
+    color: #f0f0f0; /* Texto claro */
+}
+
+/* Listas de fotos */
+li {
+    background-color: #1f1f1f; /* Fondo oscuro para las tarjetas de las fotos */
+    border: 1px solid #3e3e3e; /* Bordes oscuros */
+    color: #f0f0f0; /* Texto claro */
+}
+
+/* Enlaces */
+a {
+    color: #76a5ff; /* Enlaces en azul claro para contraste */
+    text-decoration: underline;
+}
+
+a:hover {
+    color: #bbd4ff; /* Color más claro en el hover de los enlaces */
+}
+
+/* Fondo y color de las secciones */
+section {
+    background-color: #1f1f1f; /* Fondo oscuro para secciones */
+    color: #f0f0f0; /* Texto claro */
+    border: 1px solid #3e3e3e; /* Bordes oscuros */
+}
+
+/* Iconos de menú */
+.icono-menu {
+    color: #f0f0f0; /* Iconos claros */
+}
+
+/* Ajustes para formularios */
+input, select, textarea {
+    background-color: #333; /* Fondo oscuro para inputs */
+    color: #f0f0f0; /* Texto claro */
+    border: 1px solid #555; /* Borde oscuro */
+}
+
+input::placeholder {
+    color: #bbb; /* Placeholder claro */
+}
+
+button {
+    background-color: #3e3e3e;
+    color: white;
+}
+
+button:hover {
+    background-color: #555555; /* Botón ligeramente más claro al pasar el ratón */
+}

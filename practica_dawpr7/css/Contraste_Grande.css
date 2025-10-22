@@ -1,0 +1,2 @@
+@import url('letra_grande.css'); /* Primero importar letra grande */
+@import url('Alto_contraste.css'); /* Luego importar alto contraste para que prevalezca en colores */

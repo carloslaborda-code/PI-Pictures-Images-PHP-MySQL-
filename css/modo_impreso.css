@@ -1,0 +1,155 @@
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Estilo general para impresión */
+body {
+    font-family: 'Times New Roman', serif;
+    font-size: 12pt;
+    line-height: 1.5;
+    color: black;
+    background-color: white;
+    margin: 0.5cm; /* Reducir el margen para asegurar que todo el contenido quepa en una sola página */
+}
+
+/* Títulos */
+h1 {
+    color: black;
+    margin-bottom: 10px;
+    font-weight: bold;
+    text-align: left;
+}
+
+h2 {
+    display: block;
+    font-size: 14pt;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+/* Ocultar todos los h3 por defecto */
+h3 {
+    display: none;
+}
+
+/* Mostrar solo el h3 dentro de la sección con la clase 'coste-album-seccion' */
+.coste-album-seccion h3 {
+    display: block;
+    font-size: 14pt;
+    margin-top: 10px; /* Reducir margen superior */
+    text-align: center;
+}
+
+/* Ocultar elementos de navegación */
+nav {
+    display: none;
+}
+
+/* Mostrar solo el encabezado específico */
+header {
+    display: block;
+    margin-bottom: 1cm;
+    text-align: center;
+}
+
+header h1 {
+    display: block;
+    font-size: 16pt;
+    text-align: center;
+}
+
+/* Imágenes importantes */
+img {
+    display: none;
+}
+
+img.importante,
+img.foto-detalle {
+    display: block;
+    margin: 0 auto;
+    max-width: 100%;
+    height: auto;
+}
+
+/* Secciones y listas */
+section {
+    margin-bottom: 0.5cm; /* Reducir el margen inferior para que el contenido no se desborde */
+    text-align: center;
+}
+
+/* Mostrar solo el formulario de registro en la impresión */
+.formulario-registro {
+    display: block;
+    padding: 0;
+    margin: 0 auto;
+    max-width: 600px;
+    border: none;
+}
+
+/* Estilo para los campos de entrada en el formulario de registro */
+.formulario-registro input,
+.formulario-registro select {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+/* Mostrar etiquetas y campos alineados */
+.formulario-registro label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.formulario-registro button {
+    display: none; /* Ocultar el botón de envío en la impresión */
+}
+
+/* Pie de página */
+footer {
+    display: none; /* Ocultar el pie de página en la impresión */
+}
+
+/* Tablas */
+table {
+    border-collapse: collapse;
+    width: 100%;
+    margin-bottom: 1cm;
+}
+
+th, td {
+    border: 1px solid black;
+    padding: 5px;
+}
+
+/* Configuración de la página para evitar la hoja en blanco */
+@page {
+    size: A4;
+    margin: 0.5cm; /* Reducir margen */
+}
+
+/* Evitar saltos de página */
+h1, h2, h3, section, .formulario-registro, .coste-album-seccion {
+    page-break-inside: avoid;
+}
+
+/* Manejo de viudas y huérfanas */
+p {
+    widows: 2;
+    orphans: 2;
+}
+
+/* Eliminar el contenido URL */
+@media print {
+    .buscador-rapido,
+    .acceso-usuario,
+    body::before {
+        display: none;
+    }
+}

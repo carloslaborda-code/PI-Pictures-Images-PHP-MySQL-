@@ -1,0 +1,41 @@
+/* Usar variables globales y añadir nuevas específicas para letra grande */
+:root {
+    --font-size-letra-grande: 1.75rem; /* Tamaño más grande de la fuente */
+}
+
+body {
+    background-color: var(--color-fondo);
+    color: var(--color-texto);
+    font-size: var(--font-size-letra-grande); /* Aplicar el tamaño más grande */
+}
+
+/* Estilo del encabezado */
+header {
+    background-color: var(--color-primario);
+    color: var(--color-blanco);
+    font-size: var(--font-size-letra-grande); /* Aumentar tamaño del texto */
+}
+
+/* Estilo para el menú de navegación */
+nav ul a {
+    background-color: var(--color-secundario);
+    color: var(--color-texto);
+    font-size: var(--font-size-letra-grande); /* Aumentar tamaño del texto */
+    padding: 15px 25px; /* Aumentar padding */
+}
+
+/* Estilo para los botones */
+button {
+    background-color: var(--color-secundario);
+    color: var(--color-texto);
+    font-size: var(--font-size-letra-grande); /* Aumentar el tamaño del texto */
+}
+
+/* Estilo para el pie de página */
+footer {
+    font-size: var(--font-size-letra-grande); /* Aumentar el tamaño del texto en el footer */
+}
+
+footer p {
+    font-size: var(--font-size-letra-grande); /* Asegurar que los párrafos también aumenten */
+}

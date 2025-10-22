@@ -1,0 +1,721 @@
+/* Definir las variables globales */
+:root {
+    /* Colores principales */
+    --color-primario: #0056b3;
+    --color-secundario: #ffd60a;
+    --color-hover-secundario: #ff9f00;
+    --color-terciario: #156515;
+    --color-texto: #333;
+    --color-fondo: #e0f7fa;
+    --color-blanco: #ffffff;
+    --color-negro: #000;
+    --color-gris-claro: #f0f0f0;
+    --color-borde: #939393;
+
+    /* Tamaños */
+    --font-size-pequeno: 0.875rem;
+    --font-size-normal: 1rem;
+    --font-size-header: 1.25rem;
+    --font-size-footer: 12px;
+    --font-size-tabla: 16px;
+
+    /* Espaciado y Padding */
+    --padding-boton: 8px 12px;
+    --padding-formulario: 15px;
+    --margin-formulario: 15px;
+    --borde-boton: 2px;
+    --gap-secciones: 15px;
+
+    /* Bordes y Sombra */
+    --radio-borde: 5px;
+    --sombra: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Estilo general para el cuerpo de la página */
+body {
+    background-color: var(--color-fondo);
+    color: var(--color-texto);
+    display: flex;
+    flex-direction: column;
+    font-family: Arial, sans-serif;
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+    font-size: var(--font-size-pequeno);
+}
+
+.boton-volver {
+    background-color: var(--color-secundario); 
+    border: var(--borde-boton) solid var(--color-hover-secundario); 
+    border-radius: var(--radio-borde); 
+    color: var(--color-texto); 
+    display: inline-block; 
+    cursor: pointer; 
+    font-size: var(--font-size-pequeno); 
+    padding: var(--padding-boton); 
+    text-align: center;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+    box-shadow: var(--sombra);
+    margin-top: var(--gap-secciones);
+}
+
+.boton-volver:hover {
+    background-color: var(--color-hover-secundario);
+}
+
+.boton-volver:focus {
+    outline: 2px solid var(--color-terciario);
+    background-color: var(--color-terciario);
+}
+
+
+/* Hacer que el main ocupe todo el espacio disponible */
+main {
+    flex: 1;
+}
+
+/* Estilo del encabezado */
+header {
+    background-color: var(--color-primario);
+    border-bottom: 3px solid #003d7a;
+    color: var(--color-blanco);
+    padding: var(--padding-formulario);
+    text-align: center;
+    font-size: var(--font-size-header);
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7);
+    align-items: center;
+}
+
+/* Estilo para el menú de navegación */
+nav ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0; /* Eliminar el margen para los botones */
+    display: flex; /* Organiza los botones en una fila */
+    justify-content: center; /* Centra los botones en la cabecera */
+    gap: 10px; /* Espaciado pequeño entre los botones */
+}
+
+nav ul a {
+    background-color: var(--color-secundario); 
+    border: var(--borde-boton) solid var(--color-hover-secundario); 
+    border-radius: var(--radio-borde); 
+    color: var(--color-texto); 
+    cursor: pointer; 
+    display: inline-block; 
+    font-size: var(--font-size-normal);
+    padding: var(--padding-boton);
+    text-decoration: none; 
+    transition: background-color 0.3s ease; 
+    box-shadow: var(--sombra);
+}
+
+nav ul a:hover {
+    background-color: var(--color-hover-secundario);
+}
+
+nav ul a:focus {
+    outline: 2px solid var(--color-terciario);
+    background-color: var(--color-terciario); 
+}
+
+/* Estilo para los botones */
+button {
+    background-color: var(--color-secundario); 
+    border: var(--borde-boton) solid var(--color-hover-secundario); 
+    border-radius: var(--radio-borde); 
+    color: var(--color-texto); 
+    display: inline-block; 
+    cursor: pointer; 
+    font-size: var(--font-size-pequeno); 
+    padding: var(--padding-boton); 
+    transition: background-color 0.3s ease;
+    box-shadow: var(--sombra);
+    margin-top: var(--gap-secciones);
+}
+
+button:hover {
+    background-color: var(--color-hover-secundario);
+}
+
+button:focus {
+    outline: 2px solid var(--color-terciario);
+    background-color: var(--color-terciario);
+}
+
+/* Estilo específico para el botón de la tabla */
+.boton-tabla {
+    background-color: var(--color-secundario);
+    border: var(--borde-boton) solid var(--color-hover-secundario);
+    border-radius: var(--radio-borde);
+    color: var(--color-texto);
+    font-size: var(--font-size-pequeno); /* Reducimos el tamaño de la fuente */
+    padding: 5px 10px; /* Botón más pequeño */
+    margin-top: 10px; /* Espaciado pequeño para mantener la separación */
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    display: block; /* Aseguramos que esté alineado correctamente debajo de la tabla */
+}
+
+.boton-tabla:hover {
+    background-color: var(--color-hover-secundario);
+}
+
+.boton-tabla:focus {
+    outline: 2px solid var(--color-terciario);
+    background-color: var(--color-terciario);
+}
+
+
+/* Contenedor para organizar la tabla y el formulario en dos columnas */
+.contenedor-tarifas-formulario {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--gap-secciones);
+    justify-content: space-between; 
+    margin: var(--margin-formulario) 0;
+}
+
+.contenedor-tarifas-formulario section {
+    flex: 1;
+    min-width: 250px;
+}
+
+/* Clase específica para la sección de la izquierda (donde está la tabla) */
+.section-izquierda {
+    flex: 1; /* Mantiene la flexibilidad */
+    max-width: 50%; /* Limita el tamaño a un 50% del contenedor padre */
+    width: 40%; /* Ancho deseado de la columna */
+    margin-right: 20px; /* Añade un pequeño margen derecho */
+    padding-bottom: 10px; /* Reduce el espacio inferior dentro del contenedor */
+    margin-bottom: 450px; /* Reduce el margen inferior */
+}
+
+/* Ajustar el tamaño de la tabla dentro de la sección izquierda */
+.section-izquierda .conBorde {
+    border: 2px solid var(--color-negro);
+    margin: 8px 0;
+    padding: 10px;
+    width: 100%; /* Ocupa el 100% del ancho de la sección izquierda */
+    max-width: 450px; /* Limita el ancho de la tabla */
+    font-size: 1.1rem; /* Aumenta el tamaño de texto */
+}
+
+/* Estilo para centrar toda la sección de coste del álbum */
+.coste-album-seccion, .coste-album-contenedor {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+    width: 100%;
+    max-width: 600px; /* Ajusta el ancho máximo según lo que necesites */
+    margin: 0 auto; /* Esto centrará la sección */
+    padding: 20px; /* Opcional: agrega algo de espacio interno */
+    box-shadow: var(--sombra); /* Mantén la sombra si quieres */
+    border-radius: var(--radio-borde); /* Borde redondeado */
+    margin-bottom: 20px;
+}
+
+.coste-album-contenedor p {
+    font-size: var(--font-size-tabla); 
+    margin: 0;
+}
+
+/* Estilo para alinear la imagen y los detalles de la foto */
+.detalle-foto-contenedor {
+    display: flex; 
+    align-items: center;
+    gap: var(--gap-secciones); 
+    justify-content: center;
+}
+
+.perfil-usuario {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    margin: 0 auto;
+    padding: 20px;
+    max-width: 600px; /* Ajusta el ancho máximo si lo necesitas */
+    background-color: var(--color-gris-claro); /* Fondo opcional */
+    border: 1px solid var(--color-borde); /* Borde opcional */
+    border-radius: var(--radio-borde); /* Bordes redondeados */
+    box-shadow: var(--sombra); /* Sombra para mejor apariencia */
+}
+
+.listado-albumes {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.listado-albumes li {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin: 10px 0;
+    padding: 15px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.listado-albumes h3 {
+    margin: 0;
+    font-size: 1.2em;
+}
+
+.listado-albumes p {
+    margin: 5px 0;
+    color: #666;
+}
+
+.listado-albumes a {
+    display: inline-block;
+    margin-top: 10px;
+    color: #0056b3;
+    text-decoration: none;
+}
+
+.listado-albumes a:hover {
+    text-decoration: underline;
+}
+
+
+
+/* Estilo para centrar solo el formulario de búsqueda */
+.formulario-busqueda {
+    align-items: center;
+    background-color: var(--color-gris-claro);
+    border: 1px solid var(--color-borde); 
+    border-radius: var(--radio-borde);
+    box-shadow: var(--sombra);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: var(--margin-formulario) auto;
+    padding: var(--padding-formulario); 
+    width: 45%; 
+}
+
+/* Ajuste del textarea para que se mantenga dentro del contenedor */
+form textarea {
+    resize: vertical; /* Permite solo la redimensión vertical */
+    width: 100%; /* Asegura que el textarea ocupe el 100% del contenedor */
+    max-width: 100%; /* Evita desbordes */
+}
+
+form.buscador-rapido input[type="text"] {
+    width: 200px !important; /* Aumenta el tamaño a lo que necesites */
+    padding: 12px 20px !important; /* Aumenta el padding para que se vea más grande */
+    font-size: var(--font-size-normal) !important; /* Ajusta el tamaño de la fuente */
+    border: 1px solid var(--color-borde); /* Asegura que haya un borde visible */
+    border-radius: var(--radio-borde); /* Añade bordes redondeados */
+}
+
+
+.foto-detalle {
+    height: auto;
+    margin-bottom: var(--gap-secciones); 
+    width: 800px; /* Aumenta el tamaño según lo necesites */
+    max-width: 100%; 
+}
+
+/* Estilo del pie de página */
+footer {
+    background: #333;
+    border-top: 3px solid var(--color-primario);
+    color: var(--color-blanco);
+    padding: var(--padding-formulario);
+    text-align: center;
+    width: 100%;
+    position: relative; 
+    bottom: 0; 
+}
+
+footer p {
+    font-size: var(--font-size-footer);
+    margin: 5px 0;
+}
+
+/* Estilo para la lista de fotos */
+.fotos-lista {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+.foto-item {
+    flex: 1 1 calc(25% - 20px); /* Ajusta el tamaño de la foto */
+    box-sizing: border-box;
+    text-align: center;
+    padding: 10px;
+    background-color: var(--color-gris-claro);
+    border: 1px solid var(--color-borde);
+    border-radius: var(--radio-borde);
+    box-shadow: var(--sombra);
+    max-width: 200px; /* Define el ancho máximo de cada foto */
+}
+
+.foto-item img {
+    width: 100%;
+    height: auto;
+    border-radius: 5px;
+}
+
+
+/* Para que los elementos en el <ul> estén en la misma línea */
+ul {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px; /* Ajusta el espacio entre los elementos según sea necesario */
+    list-style: none;
+    padding: 0;
+    justify-content: center; /* Centra los elementos dentro del contenedor */
+}
+
+li {
+    background-color: var(--color-gris-claro);
+    border: 1px solid var(--color-borde);
+    border-radius: var(--radio-borde);
+    box-shadow: var(--sombra);
+    padding: 20px;
+    text-align: center;
+    max-width: 450px; /* Puedes ajustar el tamaño según el diseño */
+    width: 100%; /* Asegura que ambos elementos tengan el mismo ancho */
+}
+
+/* Centrar solo la última imagen */
+ul li:last-child {
+    grid-column: 1 / -1; /* Hacer que la última caja ocupe todo el ancho disponible */
+    justify-self: center; /* Asegura que la última imagen esté centrada en su fila */
+}
+
+img {
+    max-width: 180px; /* Ajusta el tamaño máximo de la imagen */
+    margin-bottom: 10px;
+}
+
+p {
+    margin: 5px 0;
+}
+
+.photo-details {
+    text-align: left;
+}
+
+/* Estilo para la sección principal */
+section {
+    background-color: var(--color-blanco);
+    border: 1px solid var(--color-borde);
+    border-radius: var(--radio-borde);
+    box-shadow: var(--sombra);
+    margin-bottom: var(--gap-secciones);
+    padding: var(--padding-formulario);
+}
+
+/* Estilo específico para centrar el formulario de inicio de sesión */
+.login-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 60vh; /* Ajusta la altura para darle más espacio */
+    padding: 20px; /* Añadir algo de padding para que se vea mejor */
+}
+
+/* Asegura que los elementos en formulario-registro estén en columnas */
+.formulario-registro {
+    display: flex;
+    flex-direction: column;
+    gap: 10px; /* Espacio entre los elementos del formulario */
+    width: 50%; /* Puedes ajustar el ancho según lo que necesites */
+    margin: 0 auto; /* Centra el formulario en la página */
+}
+
+.formulario-registro label,
+.formulario-registro input,
+.formulario-registro select,
+.formulario-registro button {
+    width: 100%;
+    box-sizing: border-box;
+}
+
+/* Asegura que el botón esté centrado y tenga el mismo estilo */
+.formulario-registro button {
+    align-self: center;
+    max-width: 200px; /* Ajusta el ancho del botón si es necesario */
+}
+
+.formulario-inicio-sesion {
+    background-color: var(--color-gris-claro);
+    padding: 20px;
+    border: 1px solid var(--color-borde);
+    border-radius: var(--radio-borde);
+    box-shadow: var(--sombra);
+    width: 300px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: auto;
+}
+
+/* Centrar los campos de nombre de usuario y contraseña */
+.formulario-inicio-sesion label,
+.formulario-inicio-sesion input {
+    display: block;
+    width: 90%;
+    margin-bottom: 10px;
+}
+
+.formulario-inicio-sesion input {
+    padding: 10px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+}
+
+/* Estilo para el botón de inicio de sesión */
+.formulario-inicio-sesion button {
+    width: 100%; 
+    background-color: var(--color-secundario);
+    border: var(--borde-boton) solid var(--color-hover-secundario);
+    border-radius: var(--radio-borde);
+    color: var(--color-texto);
+    cursor: pointer;
+    font-size: var(--font-size-pequeno);
+    padding: 10px;
+    transition: background-color 0.3s ease;
+    box-shadow: var(--sombra);
+    margin-top: 10px; /* Reduce el margen superior si es necesario */
+    margin-bottom: 0; /* Asegúrate de no tener margen inferior para evitar que se salga */
+}
+
+.formulario-inicio-sesion button:hover {
+    background-color: var(--color-hover-secundario);
+}
+
+
+.table-costes {
+    width: 100%;
+    border-collapse: collapse; /* Colapsar los bordes para evitar dobles líneas */
+    margin: 20px 0;
+    font-size: var(--font-size-tabla);
+    text-align: center;
+    overflow-x: auto; /* Permite que la tabla se desplace en pantallas pequeñas */
+    display: block; /* Asegura que la tabla sea un bloque en pantallas pequeñas */
+}
+
+.table-costes th, .table-costes td {
+    border: 1px solid var(--color-borde); /* Añadir borde a las celdas */
+    padding: 10px;
+}
+
+.table-costes th {
+    background-color: #b0c4de; /* Azul claro/oscuro (puedes ajustar el tono si prefieres otro) */
+    color: var(--color-negro);  /* Letras negras */
+    font-weight: bold;
+}
+
+.table-costes tr:nth-child(even) {
+    background-color: var(--color-gris-claro); /* Alternar color para filas pares */
+}
+
+.oculto {
+    display: none;
+}
+
+.error {
+    color: red;
+    font-size: 0.9rem;
+}
+.recordarme-container {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    font-size: 14px;
+    margin-top: 10px;
+}
+
+.recordarme-container input[type="checkbox"] {
+    margin: 0;
+    width: 16px;
+    height: 16px;
+}
+.recordarme-container label {
+    line-height: 16px; /* Alinea el texto con la altura del checkbox */
+    margin: 0;
+    padding: 0;
+}
+
+
+.centrado {
+    display: flex;
+    justify-content: center; /* Centra horizontalmente */
+    align-items: center; /* Centra verticalmente */
+    text-align: center; /* Centra el texto */
+    margin: 20px auto; /* Centra la sección horizontalmente con margen superior e inferior */
+    max-width: 800px; /* Define un ancho máximo para la sección */
+    background-color: var(--color-blanco); /* Fondo blanco opcional */
+    padding: 20px; /* Añade espacio interno */
+    border: 1px solid var(--color-borde); /* Añade borde para mejor visibilidad */
+    border-radius: var(--radio-borde); /* Bordes redondeados */
+    box-shadow: var(--sombra); /* Sombra para mejor apariencia */
+}
+
+.foto-seleccionada img {
+    margin: 10px auto; /* Centra la imagen */
+    display: block;
+}
+
+.consejo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin: 20px auto;
+    max-width: 800px;
+    background-color: var(--color-blanco);
+    padding: 20px;
+    border: 1px solid var(--color-borde);
+    border-radius: var(--radio-borde);
+    box-shadow: var(--sombra);
+}
+
+.consejo-fotografico p {
+    margin: 10px 0;
+    font-size: var(--font-size-normal);
+    color: var(--color-texto);
+}
+
+.consejo-fotografico strong {
+    color: var(--color-primario);
+}
+
+
+
+
+/* Para pantallas pequeñas (móviles) hasta 480px */
+@media (max-width: 480px) {
+    body {
+        font-size: 12px; 
+    }
+
+    textarea, input, select {
+        width: 100%; 
+    }
+
+    header, footer {
+        padding: 8px;
+        margin: 0;
+    }
+
+    .formulario-busqueda, .formulario-registro, .coste-album-seccion {
+        width: 85%;
+    }
+
+    .contenedor-tarifas-formulario {
+        margin: 0; /* Eliminar márgenes */
+    }
+
+    .section-izquierda {
+        margin-bottom: 20px; /* Reducir margen inferior */
+    }
+
+    section {
+        margin-bottom: 15px; /* Reducir el margen inferior entre secciones */
+    }
+
+    footer {
+        margin: 0;
+        padding: 10px;
+    }
+
+    ul {
+        grid-template-columns: 1fr; /* Una sola columna en móviles */
+    }
+
+    /* Asegurar que no haya un espacio innecesario en el contenedor de la tabla */
+    #contenedor-tabla-costes {
+        margin-bottom: 0;
+        padding-bottom: 0;
+    }
+
+    /* Reducir márgenes entre las secciones y el contenido */
+    form {
+        margin-bottom: 15px;
+        padding: 10px;
+    }
+    
+}
+
+/* Para pantallas medianas (481px a 1024px) */
+@media (min-width: 481px) and (max-width: 1024px) {
+    body {
+        font-size: 13px; /* Ajustar el tamaño de fuente si es necesario */
+    }
+
+    header, footer {
+        padding: 8px; /* Reducir el padding del encabezado y pie de página */
+        margin: 0;
+    }
+
+    .formulario-busqueda, .formulario-registro, .coste-album-seccion {
+        width: 70%; 
+    }
+
+    ul {
+        grid-template-columns: 1fr 1fr; /* Dos columnas en tablets */
+    }
+
+    .table-costes {
+        font-size: 14px; /* Reducir el tamaño de la fuente en pantallas pequeñas */
+        display: block;
+        overflow-x: auto; /* Hace que la tabla se desplace horizontalmente en pantallas pequeñas */
+    }
+
+    .table-costes th, .table-costes td {
+        padding: 8px; /* Reduce el padding para que las celdas ocupen menos espacio */
+    }
+
+    .contenedor-tarifas-formulario {
+        margin: 0;
+        padding-bottom: 0; /* Eliminar el espacio innecesario */
+    }
+
+    .section-izquierda {
+        margin-bottom: 20px; /* Reducir el margen inferior */
+    }
+
+    section {
+        margin-bottom: 15px;
+    }
+
+    footer {
+        margin: 0;
+        padding: 10px;
+    }
+
+    /* Reducir los márgenes y padding en formularios para compactar */
+    form {
+        margin-bottom: 10px;
+        padding: 10px;
+    }
+
+    /* Asegurar que el contenedor de la tabla no genere espacio innecesario */
+    #contenedor-tabla-costes {
+        margin-bottom: 0;
+        padding-bottom: 0;
+    }
+
+}
+
+/* Estilo para pantallas grandes (monitores de escritorio) */
+@media (min-width: 1025px) and (max-width: 1920px) {
+    .formulario-busqueda, .formulario-registro, .coste-album-seccion {
+        width: 55%; 
+    }
+    ul {
+        grid-template-columns: 1fr 1fr; /* Dos columnas en pantallas grandes */
+    }
+}
